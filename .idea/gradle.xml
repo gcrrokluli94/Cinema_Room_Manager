@@ -22,7 +22,9 @@
             <option value="$PROJECT_DIR$/Topics/Boxing and unboxing/Safe converting" />
             <option value="$PROJECT_DIR$/Topics/Boxing and unboxing/Theory" />
             <option value="$PROJECT_DIR$/Topics/Branching statements/Bus tour" />
+            <option value="$PROJECT_DIR$/Topics/Branching statements/Even or odd" />
             <option value="$PROJECT_DIR$/Topics/Branching statements/The (un)-ordered sequence" />
+            <option value="$PROJECT_DIR$/Topics/Branching statements/The integer barrier" />
             <option value="$PROJECT_DIR$/Topics/Branching statements/The sequence" />
             <option value="$PROJECT_DIR$/Topics/Branching statements/Theory" />
             <option value="$PROJECT_DIR$/Topics/Conditional statement/Check a number is positive" />
@@ -59,6 +61,9 @@
             <option value="$PROJECT_DIR$/Topics/Iterating over arrays/Theory" />
             <option value="$PROJECT_DIR$/Topics/Iterating over arrays/Triples" />
             <option value="$PROJECT_DIR$/Topics/Iterating over arrays/Two numbers never occur next to each other" />
+            <option value="$PROJECT_DIR$/Topics/Multidimensional array/Fill the matrix by numbers" />
+            <option value="$PROJECT_DIR$/Topics/Multidimensional array/Maximum element in a matrix" />
+            <option value="$PROJECT_DIR$/Topics/Multidimensional array/Theory" />
             <option value="$PROJECT_DIR$/Topics/Objects/Army" />
             <option value="$PROJECT_DIR$/Topics/Objects/Change identities" />
             <option value="$PROJECT_DIR$/Topics/Objects/Preparing full name" />
@@ -70,6 +75,8 @@
             <option value="$PROJECT_DIR$/Topics/Relational operators/Theory" />
             <option value="$PROJECT_DIR$/Topics/Scanning the input/Guest list of a hotel" />
             <option value="$PROJECT_DIR$/Topics/Scanning the input/Hiring a chef" />
+            <option value="$PROJECT_DIR$/Topics/Scanning the input/Print strings in the reverse order" />
+            <option value="$PROJECT_DIR$/Topics/Scanning the input/Printing each word in a new line" />
             <option value="$PROJECT_DIR$/Topics/Scanning the input/Printing strings in the same order" />
             <option value="$PROJECT_DIR$/Topics/Scanning the input/Theory" />
             <option value="$PROJECT_DIR$/Topics/Static members/Detail manufacturing" />

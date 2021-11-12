@@ -4,7 +4,7 @@
  <body>
   <p>The <strong>conditional statement</strong> is a construction that allows a program to perform different computations depending on the value of a Boolean expression. If it is <code class="language-java">true</code>, the program performs one computation; otherwise, if it is <code class="language-java">false</code>, the program performs another computation. Here are some examples of Boolean expressions: <code class="language-java">a &gt; b</code>, <code class="language-java">i - j == 1</code>, and so on.</p> 
   <p>The conditional statement has different forms. We will use all of them.</p> 
-  <h2 style="text-align: center;">The single if-case</h2> 
+  <h5 style="text-align: center;">The single if-case</h5> 
   <p>The simplest form of the conditional statement consists of the keyword <code class="language-java">if</code>, a Boolean expression, and a body enclosed in curly braces.</p> 
   <pre><code class="language-java">if (expression) {
     // body: do something
@@ -22,7 +22,7 @@ if (b) { // or !b
     // do something
 }</code></pre> 
   <p>A conditional statement can be used in any place in a program where the statement is expected. It can be even nested inside another conditional statement to perform multistage checks.</p> 
-  <h2 style="text-align: center;">The if-else-cases</h2> 
+  <h5 style="text-align: center;">The if-else-cases</h5> 
   <p>The if-case above can be extended with the keyword <code class="language-java">else</code> and another body to do alternative actions when the expression is <code class="language-java">false</code>.</p> 
   <pre><code class="language-java">if (expression) {    
     // do something
@@ -44,7 +44,7 @@ if (num % 2 == 0) {
     System.out.println("It's an odd number");
 }</code></pre> 
   <p>Since a number can only be even or odd, only one message will be displayed. If <code class="language-java">num</code> is 10, the program outputs <code class="language-java">"It's an even number"</code>. If the value is 11, it outputs <code class="language-java">"It's an odd number"</code>.</p> 
-  <h2 style="text-align: center;">The if-else-if-cases</h2> 
+  <h5 style="text-align: center;">The if-else-if-cases</h5> 
   <p>The most general form of the conditional statement consists of several conditions and <code class="language-java">else</code>-branches.</p> 
   <pre><code class="language-java">if (expression0) {
     // do something

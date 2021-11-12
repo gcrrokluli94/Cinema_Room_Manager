@@ -5,6 +5,13 @@ import java.util.Scanner;
 public class Cinema {
 
     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter the number of rows:");
+        System.out.print("> ");
+        int rows = input.nextInt();
+        System.out.println("Enter the number of seats in each row:");
+        System.out.print("> ");
+        int seatsPerRow = input.nextInt();
         System.out.println("Cinema:");
         char[][] cinema = { {' ', '1', '2', '3', '4', '5', '6', '7', '8'},
                             {'1', 'S', 'S', 'S', 'S', 'S', 'S', 'S', 'S'},
@@ -20,13 +27,6 @@ public class Cinema {
             }
             System.out.println();
         }
-        Scanner input = new Scanner(System.in);
-        System.out.println("Enter the number of rows:");
-        System.out.print("> ");
-        int rows = input.nextInt();
-        System.out.println("Enter the number of seats in each row:");
-        System.out.print("> ");
-        int seatsPerRow = input.nextInt();
         int ticketPrice = 0;
         int totalIncome = 0;
         int frontHalf = 0;
