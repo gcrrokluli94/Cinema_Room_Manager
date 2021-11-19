@@ -10,8 +10,5 @@ files:
     }
   learner_created: false
 feedback_link: https://hyperskill.org/learn/step/2231#comment
-status: Solved
-feedback:
-  message: <html>Correct solution</html>
-  time: Mon, 20 Sep 2021 16:46:16 UTC
+status: Failed
 record: -1

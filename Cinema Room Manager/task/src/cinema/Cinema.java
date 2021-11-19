@@ -13,6 +13,14 @@ public class Cinema {
         System.out.print("> ");
         int seatsPerRow = input.nextInt();
         System.out.println("Cinema:");
+        char[][] cinema1 = new char[rows][seatsPerRow];
+        for (int i = 0; i < cinema1.length; i++) {
+            for (int j = 0; j < cinema1[i].length; j++) {
+                cinema1[0][0] = ' ';
+                System.out.println(cinema1[i][j] + " ");
+            }
+            System.out.println();
+        }
         char[][] cinema = { {' ', '1', '2', '3', '4', '5', '6', '7', '8'},
                             {'1', 'S', 'S', 'S', 'S', 'S', 'S', 'S', 'S'},
                             {'2', 'S', 'S', 'S', 'S', 'S', 'S', 'S', 'S'},
