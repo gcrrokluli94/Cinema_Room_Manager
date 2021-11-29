@@ -2,39 +2,30 @@ package cinema;
 
 import java.util.Scanner;
 
+import static java.lang.System.out;
+
 public class Cinema {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        System.out.println("Enter the number of rows:");
-        System.out.print("> ");
+        out.println("Enter the number of rows:");
+
         int rows = input.nextInt();
-        System.out.println("Enter the number of seats in each row:");
-        System.out.print("> ");
+        out.println("Enter the number of seats in each row:");
+
         int seatsPerRow = input.nextInt();
-        System.out.println("Cinema:");
-        char[][] cinema1 = new char[rows][seatsPerRow];
-        for (int i = 0; i < cinema1.length; i++) {
-            for (int j = 0; j < cinema1[i].length; j++) {
-                cinema1[0][0] = ' ';
-                System.out.println(cinema1[i][j] + " ");
-            }
-            System.out.println();
-        }
-        char[][] cinema = { {' ', '1', '2', '3', '4', '5', '6', '7', '8'},
-                            {'1', 'S', 'S', 'S', 'S', 'S', 'S', 'S', 'S'},
-                            {'2', 'S', 'S', 'S', 'S', 'S', 'S', 'S', 'S'},
-                            {'3', 'S', 'S', 'S', 'S', 'S', 'S', 'S', 'S'},
-                            {'4', 'S', 'S', 'S', 'S', 'S', 'S', 'S', 'S'},
-                            {'5', 'S', 'S', 'S', 'S', 'S', 'S', 'S', 'S'},
-                            {'6', 'S', 'S', 'S', 'S', 'S', 'S', 'S', 'S'},
-                            {'7', 'S', 'S', 'S', 'S', 'S', 'S', 'S', 'S'}};
-        for (int i = 0; i < cinema.length; i++) {
-            for (int j = 0; j < cinema[i].length; j++) {
-                System.out.print(cinema[i][j] + " ");
-            }
-            System.out.println();
-        }
+
+        char[][] cinema = getArray(rows, seatsPerRow);
+        display(cinema);
+
+        out.println("Enter a row number:");
+
+        int rowNum = input.nextInt();
+        out.println("Enter a seat number in that row:");
+
+        int seatNum = input.nextInt();
+
+
         int ticketPrice = 0;
         int totalIncome = 0;
         int frontHalf = 0;
@@ -43,20 +34,90 @@ public class Cinema {
         if (rows % 2 != 0 && rows * seatsPerRow > 60) {
             frontHalf = rows / 2;
             backHalf = (rows % 2) + frontHalf;
+            if (rowNum > frontHalf) {
+                ticketPrice = 8;
+                out.println("Ticket price: $" + ticketPrice);
+            } else {
+                ticketPrice = 10;
+                out.println("Ticket price: $" + ticketPrice);
+            }
             totalIncome = (frontHalf * seatsPerRow * 10) + (backHalf * seatsPerRow * 8);
-            System.out.println("Total income:");
-            System.out.println("$" + totalIncome);
         } else if (rows % 2 == 0 && rows * seatsPerRow > 60) {
             frontHalf = rows / 2;
             backHalf = frontHalf;
+            if (rowNum > frontHalf) {
+                ticketPrice = 8;
+                out.println("Ticket price: $" + ticketPrice);
+            } else {
+                ticketPrice = 10;
+                out.println("Ticket price: $" + ticketPrice);
+            }
             totalIncome = (frontHalf * seatsPerRow * 10) + (backHalf * seatsPerRow * 8);
-            System.out.println("Total income:");
-            System.out.println("$" + totalIncome);
         } else if (rows * seatsPerRow <= 60) {
             ticketPrice = 10;
             totalIncome = (rows * seatsPerRow) * ticketPrice;
-            System.out.println("Total income:");
-            System.out.println("$" + totalIncome);
+            out.println("Ticket price: $" + ticketPrice);
+        }
+        display(cinema, rowNum, seatNum);
+    }
+    public static char[][] getArray(int rows, int seatsPerRow) {
+        int row, col;
+        row = rows;
+        col = seatsPerRow;
+        row++;
+        col++;
+        char[][] cinema = new char[row][col];
+        return cinema;
+    }
+    public static void display(char[][] cinema) {
+        char numCharCol = 48;
+        char numCharRow = 48;
+        out.println("Cinema:");
+        for (int i = 0; i < cinema.length; i++) {
+            for (int j = 0; j < cinema[i].length; j++) {
+                cinema[0][0] = ' ';
+                if (cinema[i][j] == cinema[0][j]) {
+                    cinema[i][j] = numCharCol++;
+                }
+                if (cinema[i][j] == cinema[i][0]) {
+                    cinema[i][j] = numCharRow++;
+                } else if (cinema[i][j] != cinema[0][j] && cinema[i][j] != cinema[i][0]) {
+                    cinema[i][j] = 'S';
+                }
+            }
+        }
+        for (int i = 0; i < cinema.length; i++) {
+            for (int j = 0; j < cinema[i].length; j++) {
+                out.print(cinema[i][j] + " ");
+            }
+            out.println();
+        }
+
+    }
+    public static void display(char[][] cinema, int rowNum, int seatNum) {
+        char numCharI = 48;
+        char numCharJ = 48;
+        out.println("Cinema:");
+        for (int i = 0; i < cinema.length; i++) {
+            for (int j = 0; j < cinema[i].length; j++) {
+                cinema[0][0] = ' ';
+                cinema[rowNum][seatNum] = 'B';
+                if (cinema[i][j] == cinema[0][j]) {
+                    cinema[i][j] = numCharI++;
+                }
+                if (cinema[i][j] == cinema[i][0]) {
+                    cinema[i][j] = numCharJ++;
+                } else if (cinema[i][j] != cinema[0][j] && cinema[i][j] != cinema[i][0]
+                        && cinema[i][j] != cinema[rowNum][seatNum]) {
+                    cinema[i][j] = 'S';
+                }
+            }
+        }
+        for (int i = 0; i < cinema.length; i++) {
+            for (int j = 0; j < cinema[i].length; j++) {
+                out.print(cinema[i][j] + " ");
+            }
+            out.println();
         }
     }
 }
