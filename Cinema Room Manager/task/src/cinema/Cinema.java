@@ -7,24 +7,19 @@ import static java.lang.System.out;
 public class Cinema {
 
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         out.println("Enter the number of rows:");
 
-        int rows = input.nextInt();
+        int rows = sc.nextInt();
         out.println("Enter the number of seats in each row:");
+        int seatsPerRow = sc.nextInt();
 
-        int seatsPerRow = input.nextInt();
-
+        int rowNum = 0, seatNum = 0;
         char[][] cinema = getArray(rows, seatsPerRow);
-        display(cinema);
-
-        out.println("Enter a row number:");
-
-        int rowNum = input.nextInt();
-        out.println("Enter a seat number in that row:");
-
-        int seatNum = input.nextInt();
-
+        Menu(cinema, rows, seatsPerRow, rowNum, seatNum);
+    }
+    public static void Calculate(int rows, int seatsPerRow, int rowNum){
+        Scanner sc = new Scanner(System.in);
 
         int ticketPrice = 0;
         int totalIncome = 0;
@@ -58,7 +53,34 @@ public class Cinema {
             totalIncome = (rows * seatsPerRow) * ticketPrice;
             out.println("Ticket price: $" + ticketPrice);
         }
-        display(cinema, rowNum, seatNum);
+    }
+    public static void Menu(char[][] cinema,int rows, int seatsPerRow, int rowNum, int seatNum) {
+        Scanner sc = new Scanner(System.in);
+        do {
+            out.println("1. Show the seats");
+            out.println("2. Buy a ticket");
+            out.println("0. Exit");
+            switch (sc.nextInt()) {
+                case 1: if (seatNum > 0 && rowNum > 0) {
+                    display(cinema, rowNum, seatNum);
+                } else {
+                    display(cinema);
+                }
+                Menu(cinema, rows, seatsPerRow, rowNum, seatNum);
+                    break;
+                case 2: out.println("Enter a row number:");
+
+                    rowNum = sc.nextInt();
+                    out.println("Enter a seat number in that row:");
+
+                    seatNum = sc.nextInt();
+                    Calculate(rows, seatsPerRow, rowNum);
+                    Menu(cinema, rows, seatsPerRow, rowNum ,seatNum);
+                    break;
+                case 0:
+                    return;
+            }
+        } while (sc.nextInt() != 0);
     }
     public static char[][] getArray(int rows, int seatsPerRow) {
         int row, col;
